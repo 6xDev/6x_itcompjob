@@ -162,7 +162,7 @@ Citizen.CreateThread(function()
                 action = function()
                     openfixmenu() 
                 end}},
-                job = Config.job
+                job = Config.job,
             distance = 2.0
         })
     end
