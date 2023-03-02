@@ -7,11 +7,12 @@ description '[QB] 6x_itcompjob'
 version '1.0.1'
 
 client_scripts{
-    "client/client.lua"
+    'client/client.lua',
+    'client/delivery.lua'
 }
 
 server_scripts {
-    "server/server.lua"
+    'server/server.lua'
 }
 
 shared_scripts {
