@@ -6,6 +6,30 @@ fixed = false
 local alreadyEnteredZone = false
 
 Citizen.CreateThread(function()
+    ItCompJob = AddBlipForCoord(Config.BlipLocation)
+    SetBlipSprite (ItCompJob, 606)
+    SetBlipDisplay(ItCompJob, 4)
+    SetBlipScale  (ItCompJob, 0.8)
+    SetBlipAsShortRange(ItCompJob, true)
+    SetBlipColour(ItCompJob, 3)
+    BeginTextCommandSetBlipName("STRING")
+    AddTextComponentSubstringPlayerName(Config.BlipName2)
+    EndTextCommandSetBlipName(ItCompJob)
+end)
+
+Citizen.CreateThread(function()
+    ItCompJob = AddBlipForCoord(Config.BlipLocation3)
+    SetBlipSprite (ItCompJob, 606)
+    SetBlipDisplay(ItCompJob, 4)
+    SetBlipScale  (ItCompJob, 0.8)
+    SetBlipAsShortRange(ItCompJob, true)
+    SetBlipColour(ItCompJob, 3)
+    BeginTextCommandSetBlipName("STRING")
+    AddTextComponentSubstringPlayerName(Config.BlipName3)
+    EndTextCommandSetBlipName(ItCompJob)
+end)
+
+Citizen.CreateThread(function()
     hashKey = RequestModel(GetHashKey(Config.ShopPed))
 
 
@@ -66,6 +90,12 @@ Citizen.CreateThread(function()
                 label = Lang:t('label.finishjob'),
                 job = Config.job
             },
+            {
+                event = 'nh-context:startdelivery',
+                icon = 'far fa-clipboard',
+                label = Lang:t('label.startdelivery'),
+                job = Config.job
+            }
     	},
     	distance = 2.5,
     })
@@ -205,6 +235,41 @@ Citizen.CreateThread(function()
             },
         },
         distance = 2.0
+    })
+end)
+
+RegisterNetEvent('nh-context:startdelivery', function(data)
+    exports['qb-menu']:openMenu({
+        {
+            header = Lang:t("label.startdelivery"),
+            isMenuHeader = true
+        },
+        {
+           
+            header = Lang:t("qbmenu.needtodeliver"),
+            isMenuHeader = true
+        },
+        {
+           
+            header = Lang:t(Config.DeliveryItem),
+            isMenuHeader = true
+        },
+        {
+           
+            header = Lang:t("qbmenu.tolocation"),
+            isMenuHeader = true
+        },
+        {
+           
+            header = Lang:t("qbmenu.confirm"),
+            params = {
+                event = "6x_itcompjob:client:startdelivery"
+            }
+        },
+        {
+            header = Lang:t("qbmenu.closeheader"),
+            isMenuHeader = true
+        }
     })
 end)
 
