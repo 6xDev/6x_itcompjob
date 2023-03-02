@@ -17,6 +17,10 @@
 * Checking components and replace it
 * Payout
 
+#Update 1.0.1
+* Added blips to locations [company location/shop]
+* Delivery parts system
+
 ## Dependencies
 - [qb-core](https://github.com/qbcore-framework/qb-core)
 - [qb-target](https://github.com/qbcore-framework/qb-target)
