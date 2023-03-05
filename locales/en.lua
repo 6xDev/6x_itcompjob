@@ -5,7 +5,9 @@ local Translations = {
         ["finishjob"] = "Finish job",
         ["entry"] = "Entry",
         ["exit"] = "Exit",
-        ["checkpc"] = "Check PC"
+        ["checkpc"] = "Check PC",
+        ["delivery"] = "Deliver",
+        ["startdelivery"] = "Selling Station"
     },
 
     notify = {
@@ -20,6 +22,17 @@ local Translations = {
         ["needtocheckmon"] = "You first need to check Monitor!",
         ["needtocheckgpu"] = "You first need to check Graphic Card!",
         ["needtocheckcpu"] = "You first need to check Processor!",
+        --
+        ["neworder"] = "Your new order address has been marked",
+        ["ondelivery"] = "You are already delivering",
+        ["realy"] = "Are you ready for sale?",
+        ["finish"] = "Sale Is Finish",
+        ["notselling"] = "You haven't started selling",
+        ["notfinish"] = "You must be in the vehicle to finish the delivery",
+        ["packetsell"] = "Order is being delivered",
+        ["needitem"] = "Required items are missing.",
+        ["deliverynotify"] = "that's how much you got from your burger order: $",
+        --
         ["success"] = "Success"
     },
 
@@ -39,6 +52,9 @@ local Translations = {
         ["checktxt"] = "Toolbox",
         ["imbroken"] = "I think there's something wrong here, so I'd better replace it.",
         ["replaceit"] = "Replace this part",
+        ["needtodeliver"] = "You need to delivery:",
+        ["tolocation"] = "To location on map",
+        ["confirm"] = "Confirm",
         ["wdmoney"] = "Withdraw money",
         ["cash"] = "Cash",
         ["bank"] = "Bank",
