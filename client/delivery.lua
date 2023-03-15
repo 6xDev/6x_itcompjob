@@ -34,18 +34,18 @@ end)
 RegisterNetEvent("6x_itcompjob:client:packetsell")
 AddEventHandler("6x_itcompjob:client:packetsell", function()
     if client then
-        random = math.random(1,#Config.DeliveryCoords)
+        random = math.random(1,#Delivery.Coords)
         QBCore.Functions.Notify(Lang:t("notify.neworder"), "primary")
-        SetNewWaypoint(Config.DeliveryCoords[random]["x"],Config.DeliveryCoords[random]["y"])
+        SetNewWaypoint(Delivery.Coords[random]["x"],Delivery.Coords[random]["y"])
         blip = true
         status = true
         while status do
             local ped = PlayerPedId()
             local plycoords = GetEntityCoords(ped)
-            local distance = #(plycoords - vector3(Config.DeliveryCoords[random]["x"],Config.DeliveryCoords[random]["y"],Config.DeliveryCoords[random]["z"])) 
+            local distance = #(plycoords - vector3(Delivery.Coords[random]["x"],Delivery.Coords[random]["y"],Delivery.Coords[random]["z"])) 
             Citizen.Wait(1)
             if distance < 1.0 and client then
-                QBCore.Functions.DrawText3D(Config.DeliveryCoords[random]["x"],Config.DeliveryCoords[random]["y"],Config.DeliveryCoords[random]["z"], Lang:t("qbmenu.deliver"))
+                QBCore.Functions.DrawText3D(Delivery.Coords[random]["x"],Delivery.Coords[random]["y"],Delivery.Coords[random]["z"], Lang:t("qbmenu.deliver"))
                 if IsControlJustPressed(1, 38) then
                     PacketSell2()
                 end
