@@ -4,19 +4,6 @@ local client = true
 local status = false
 local delivery = 0
 
-Delivery.Coords = {
-    [1] = {['x'] = 224.15, ['y'] = 513.55, ['z'] = 140.92,['h'] = 245.45, ['info'] = 'Vinewood 1'},
-    [2] = {['x'] = 43.02, ['y'] = 468.85, ['z'] = 148.1,['h'] = 230.45, ['info'] = 'Vinewood 2'}, 
-    [3] = {['x'] = 119.33, ['y'] = 564.1, ['z'] = 183.96,['h'] = 230.45, ['info'] = 'Vinewood 3'},
-    [4] = {['x'] = -60.82, ['y'] = 360.56, ['z'] = 113.06,['h'] = 230.45, ['info'] = 'Vinewood 4'},
-    [5] = {['x'] = -622.87, ['y'] = 488.81, ['z'] = 108.88,['h'] = 230.45, ['info'] = 'Vinewood 5'}, 
-    [6] = {['x'] = -1040.67, ['y'] = 508.11, ['z'] = 84.38,['h'] = 123.45, ['info'] = 'Vinewood 6'}, 
-    [7] = {['x'] = -1308.13, ['y'] = 448.9, ['z'] = 100.97,['h'] = 194.45, ['info'] = 'Vinewood 7'}, 
-    [8] = {['x'] = -1733.21, ['y'] = 378.99, ['z'] = 89.73,['h'] = 194.45, ['info'] = 'Vinewood 8'},
-    [9] = {['x'] = -2009.15, ['y'] = 367.42, ['z'] = 94.81,['h'] = 232.45, ['info'] = 'Vinewood 9'},
-    [10] = {['x'] = -1996.29, ['y'] = 591.25, ['z'] = 118.1,['h'] = 232.45, ['info'] = 'Vinewood 10'},
-}
-
 RegisterNetEvent("6x_itcompjob:client:startdelivery")
 AddEventHandler("6x_itcompjob:client:startdelivery", function()
     if client then 
@@ -34,18 +21,18 @@ end)
 RegisterNetEvent("6x_itcompjob:client:packetsell")
 AddEventHandler("6x_itcompjob:client:packetsell", function()
     if client then
-        random = math.random(1,#Delivery.Coords)
+        random = math.random(1,#Config.DeliveryCoords)
         QBCore.Functions.Notify(Lang:t("notify.neworder"), "primary")
-        SetNewWaypoint(Delivery.Coords[random]["x"],Delivery.Coords[random]["y"])
+        SetNewWaypoint(Config.DeliveryCoords[random]["x"],Config.DeliveryCoords[random]["y"])
         blip = true
         status = true
         while status do
             local ped = PlayerPedId()
             local plycoords = GetEntityCoords(ped)
-            local distance = #(plycoords - vector3(Delivery.Coords[random]["x"],Delivery.Coords[random]["y"],Delivery.Coords[random]["z"])) 
+            local distance = #(plycoords - vector3(Config.DeliveryCoords[random]["x"],Config.DeliveryCoords[random]["y"],Config.DeliveryCoords[random]["z"])) 
             Citizen.Wait(1)
             if distance < 1.0 and client then
-                QBCore.Functions.DrawText3D(Delivery.Coords[random]["x"],Delivery.Coords[random]["y"],Delivery.Coords[random]["z"], Lang:t("qbmenu.deliver"))
+                QBCore.Functions.DrawText3D(Config.DeliveryCoords[random]["x"],Config.DeliveryCoords[random]["y"],Config.DeliveryCoords[random]["z"], Lang:t("qbmenu.deliver"))
                 if IsControlJustPressed(1, 38) then
                     PacketSell2()
                 end
