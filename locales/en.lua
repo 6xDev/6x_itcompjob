@@ -54,6 +54,7 @@ local Translations = {
         ["replaceit"] = "Replace this part",
         ["needtodeliver"] = "You need to delivery:",
         ["tolocation"] = "To location on map",
+        ["deliver"] = "Deliver",
         ["confirm"] = "Confirm",
         ["wdmoney"] = "Withdraw money",
         ["cash"] = "Cash",
