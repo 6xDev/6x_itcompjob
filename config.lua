@@ -28,6 +28,9 @@ Config.Job = 'itcomp'
 Config.Phone = 'qb-phone' -- qb-phone, gks-phone, qs-phone
 Config.tarortxt = 'drawtxt' -- qb-target or drawtxt
 
+Config.ProgressbarTime = 4000
+Config.ItemPrice = 500
+
 Config.DeliveryCoords = {
     [1] = {['x'] = 224.15, ['y'] = 513.55, ['z'] = 140.92,['h'] = 245.45, ['info'] = 'Vinewood 1'},
     [2] = {['x'] = 43.02, ['y'] = 468.85, ['z'] = 148.1,['h'] = 230.45, ['info'] = 'Vinewood 2'}, 

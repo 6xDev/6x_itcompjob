@@ -8,18 +8,14 @@
 - https://discord.gg/nyRp7Vtvra
 
 ## Features
-* Resmon 0.00 Always
-* QB-Target
-* Phone Mail Support
-* Multiple locations
-* Shop
-* Many comp. parts you need to check
-* Checking components and replace it
-* Payout
-
-## Update 1.0.1
-* Added blips to locations [company location/shop]
-* Delivery parts system
+- Low Resmon
+- Ped on location
+- Phone Mail Support
+- You can add multiple locations
+- LockPick system with minigame
+- Searching House and find rare items
+- You can add more items
+- Dispatch Support when you fail
 
 ## Dependencies
 - [qb-core](https://github.com/qbcore-framework/qb-core)

@@ -54,18 +54,18 @@ local Translations = {
         ["replaceit"] = "Replace this part",
         ["needtodeliver"] = "You need to delivery:",
         ["tolocation"] = "To location on map",
-        ["deliver"] = "Deliver",
+        ["deliver"] = "[E] Deliver",
         ["confirm"] = "Confirm",
         ["wdmoney"] = "Withdraw money",
         ["cash"] = "Cash",
         ["bank"] = "Bank",
         ["closeheader"] = "Close (ESC)"
-
     },
 
     progress = {
         ["checkingpart"] = "Checking..",
-        ["replacingpart"] = "Replacing part.."
+        ["replacingpart"] = "Replacing part..",
+        ["packetselling"] = "Selling packet.."
     }
 }
 
